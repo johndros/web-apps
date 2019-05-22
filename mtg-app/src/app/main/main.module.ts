@@ -1,17 +1,25 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MainRoutingModule } from './main-routing.module';
-import { NavComponent } from './layouts/nav/nav.component';
-import { FooterComponent } from './layouts/footer/footer.component';
-import { ContentComponent } from './layouts/content/content.component';
-import { CardListComponent } from './cards/card-list/card-list.component';
-import { CardDetailComponent } from './cards/card-detail/card-detail.component';
+import {
+  MainComponent,
+  NavComponent,
+  ContentComponent,
+  FooterComponent
+} from './index';
+import { SharedModule } from './shared/shared.module';
+import { CardsModule } from './cards/cards.module';
 
 @NgModule({
-  declarations: [NavComponent, FooterComponent, ContentComponent, CardListComponent, CardDetailComponent],
+  declarations: [
+    MainComponent,
+    NavComponent,
+    FooterComponent,
+    ContentComponent
+  ],
   imports: [
-    CommonModule,
+    SharedModule,
     MainRoutingModule,
+    CardsModule
   ]
 })
 export class MainModule { }
