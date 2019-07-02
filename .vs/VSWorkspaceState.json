@@ -5,10 +5,10 @@
     "\\mtg-app\\src",
     "\\mtg-app\\src\\app",
     "\\mtg-app\\src\\app\\global",
+    "\\mtg-app\\src\\app\\global\\services",
     "\\mtg-app\\src\\app\\main",
-    "\\mtg-app\\src\\app\\main\\cards",
     "\\mtg-app\\src\\app\\main\\layouts"
   ],
-  "SelectedNode": "\\mtg-app\\src\\app\\main\\cards\\card-list",
+  "SelectedNode": "\\mtg-app\\src\\polyfills.ts",
   "PreviewInSolutionExplorer": false
 }
