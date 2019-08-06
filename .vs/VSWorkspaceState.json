@@ -7,8 +7,9 @@
     "\\mtg-app\\src\\app\\global",
     "\\mtg-app\\src\\app\\global\\services",
     "\\mtg-app\\src\\app\\main",
-    "\\mtg-app\\src\\app\\main\\layouts"
+    "\\mtg-app\\src\\app\\main\\layouts",
+    "\\mtg-app\\src\\app\\main\\layouts\\nav"
   ],
-  "SelectedNode": "\\mtg-app\\src\\polyfills.ts",
+  "SelectedNode": "\\mtg-app\\src\\app\\app-routing.module.ts",
   "PreviewInSolutionExplorer": false
 }

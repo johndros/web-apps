@@ -8,18 +8,20 @@ import {
 } from './index';
 import { SharedModule } from './shared/shared.module';
 import { CardsModule } from './cards/cards.module';
+import { CardListComponent } from './cards';
 
 @NgModule({
   declarations: [
     MainComponent,
     NavComponent,
     FooterComponent,
-    ContentComponent
+    ContentComponent,
+    CardListComponent
   ],
   imports: [
-    SharedModule,
     MainRoutingModule,
-    CardsModule
+    // CardsModule,
+    SharedModule
   ]
 })
 export class MainModule { }
