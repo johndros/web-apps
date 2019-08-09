@@ -16,11 +16,11 @@ import { CardListComponent } from './cards';
     NavComponent,
     FooterComponent,
     ContentComponent,
-    CardListComponent
+    // CardListComponent
   ],
   imports: [
     MainRoutingModule,
-    // CardsModule,
+    CardsModule,
     SharedModule
   ]
 })
