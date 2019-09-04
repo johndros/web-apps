@@ -12,6 +12,10 @@ import {
   ],
   imports: [
     SharedModule
+  ],
+  exports: [
+    CardListComponent,
+    CardDetailComponent
   ]
 })
 export class CardsModule { }

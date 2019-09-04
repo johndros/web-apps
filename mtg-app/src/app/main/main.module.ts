@@ -15,8 +15,7 @@ import { CardListComponent } from './cards';
     MainComponent,
     NavComponent,
     FooterComponent,
-    ContentComponent,
-    // CardListComponent
+    ContentComponent
   ],
   imports: [
     MainRoutingModule,
