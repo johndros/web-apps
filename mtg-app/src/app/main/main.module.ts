@@ -4,22 +4,23 @@ import {
   MainComponent,
   NavComponent,
   ContentComponent,
-  FooterComponent
+  FooterComponent,
+  CardListComponent,
+  CardDetailComponent
 } from './index';
 import { SharedModule } from './shared/shared.module';
-import { CardsModule } from './cards/cards.module';
-import { CardListComponent } from './cards';
 
 @NgModule({
   declarations: [
     MainComponent,
     NavComponent,
     FooterComponent,
-    ContentComponent
+    ContentComponent,
+    CardListComponent,
+    CardDetailComponent
   ],
   imports: [
     MainRoutingModule,
-    CardsModule,
     SharedModule
   ]
 })
