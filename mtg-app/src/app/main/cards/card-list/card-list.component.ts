@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../global/services/api.service';
-import { Card } from '../../../global/models/icard';
 
 @Component({
   selector: 'app-card-list',
@@ -8,7 +7,6 @@ import { Card } from '../../../global/models/icard';
   styleUrls: ['./card-list.component.scss']
 })
 export class CardListComponent implements OnInit {
-  cards: Card[] = [];
 
   constructor(private apiService: ApiService) { }
 
@@ -21,7 +19,7 @@ export class CardListComponent implements OnInit {
     this.apiService.getCards().subscribe(
       cards => {
         this.cards = cards.cards;
-      }, () => console.log(this.cards)
+      }, error => console.log(error)
     )
   }
 
