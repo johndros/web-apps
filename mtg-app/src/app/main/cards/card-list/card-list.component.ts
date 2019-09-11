@@ -7,6 +7,7 @@ import { ApiService } from '../../../global/services/api.service';
   styleUrls: ['./card-list.component.scss']
 })
 export class CardListComponent implements OnInit {
+  cards = [];
 
   constructor(private apiService: ApiService) { }
 
