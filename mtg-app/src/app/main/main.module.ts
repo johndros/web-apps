@@ -6,7 +6,8 @@ import {
   ContentComponent,
   FooterComponent,
   CardListComponent,
-  CardDetailComponent
+  CardDetailComponent,
+  PaginationComponent
 } from './index';
 import { SharedModule } from './shared/shared.module';
 
@@ -17,7 +18,8 @@ import { SharedModule } from './shared/shared.module';
     FooterComponent,
     ContentComponent,
     CardListComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    PaginationComponent
   ],
   imports: [
     MainRoutingModule,

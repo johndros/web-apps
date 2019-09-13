@@ -11,5 +11,6 @@
     "\\mtg-app\\src\\app\\main\\cards\\card-list",
     "\\mtg-app\\src\\app\\main\\shared"
   ],
+  "SelectedNode": "\\mtg-app\\src\\app\\global\\models\\icard.ts",
   "PreviewInSolutionExplorer": false
 }
