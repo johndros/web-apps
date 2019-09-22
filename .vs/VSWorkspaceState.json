@@ -6,9 +6,9 @@
     "\\mtg-app\\src\\app",
     "\\mtg-app\\src\\app\\global",
     "\\mtg-app\\src\\app\\global\\models",
+    "\\mtg-app\\src\\app\\global\\services",
     "\\mtg-app\\src\\app\\main",
     "\\mtg-app\\src\\app\\main\\cards",
-    "\\mtg-app\\src\\app\\main\\cards\\card-list",
     "\\mtg-app\\src\\app\\main\\shared"
   ],
   "SelectedNode": "\\mtg-app\\src\\app\\global\\models\\icard.ts",

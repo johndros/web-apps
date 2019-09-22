@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../global/services/api.service';
+import { iCard } from '../../../global/models/icard';
 
 @Component({
   selector: 'app-card-list',
@@ -12,14 +13,15 @@ export class CardListComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.getCards();
+   // this.getCards();
 
   }
 
   getCards() {
     this.apiService.getCards().subscribe(
-      cards => {
-        this.cards = cards.cards;
+      resp => {
+        this.cards = resp.body.cards
+         console.log(this.cards)
       }, error => console.log(error)
     )
   }

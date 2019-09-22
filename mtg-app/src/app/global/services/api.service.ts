@@ -1,18 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators'
+import { catchError, tap } from 'rxjs/operators'
+import { iCard } from '../models/icard';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  cardsUrl = 'https://api.magicthegathering.io/v1/cards';
 
   constructor(private http: HttpClient) { }
 
-  getCards = () => {
-    return this.http.request<any>('GET', 'https://api.magicthegathering.io/v1/cards')
-      .pipe(catchError(this.handleError))
+  getCards = (): Observable<any> => {
+    return this.http.get<any>(this.cardsUrl, { observe: 'response' })
+      .pipe(catchError(this.handleError),
+         tap(data => console.log(data.headers.get()))
+        )
   }
 
   private handleError(err) {
