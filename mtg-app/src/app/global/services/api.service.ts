@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpResponse} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators'
+import { catchError, tap, map } from 'rxjs/operators'
 import { iCard } from '../models/icard';
 
 @Injectable({
@@ -12,11 +12,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getCards = (): Observable<any> => {
-    return this.http.get<any>(this.cardsUrl, { observe: 'response' })
+  getCards = (): Observable<HttpResponse<any>> => {
+    return this.http.get<HttpResponse<any>>(this.cardsUrl, { observe: 'response' })
       .pipe(catchError(this.handleError),
-         tap(data => console.log(data.headers.get()))
-        )
+        tap(resp => console.log(resp.headers)))
   }
 
   private handleError(err) {

@@ -9,20 +9,23 @@ import { iCard } from '../../../global/models/icard';
 })
 export class CardListComponent implements OnInit {
   cards = [];
+  headers = [];
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-   // this.getCards();
+   this.getCards();
 
   }
 
   getCards() {
     this.apiService.getCards().subscribe(
       resp => {
-        this.cards = resp.body.cards
-         console.log(this.cards)
-      }, error => console.log(error)
+        // this.cards = resp.body.cards
+        // this.headers =
+        console.log(resp.headers)
+      },
+      error => console.log(error)
     )
   }
 
