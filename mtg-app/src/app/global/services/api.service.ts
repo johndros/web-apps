@@ -12,10 +12,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getCards = (): Observable<HttpResponse<any>> => {
-    return this.http.get<HttpResponse<any>>(this.cardsUrl, { observe: 'response' })
-      .pipe(catchError(this.handleError),
-        tap(resp => console.log(resp.headers)))
+  getCards = (): Observable<any> => {
+    return this.http.get<any>(this.cardsUrl, { observe: 'response' })
+      .pipe(catchError(this.handleError)
+      );
   }
 
   private handleError(err) {

@@ -65,6 +65,12 @@ export interface PaginationFilter {
   pageSize?: number;
 }
 
+export interface headers {
+  ratelimit: number;
+  ratelimitRemain: number;
+  totalCount: number;
+}
+
 export enum Color {
   White,
   Blue,

@@ -22,8 +22,10 @@ export class CardListComponent implements OnInit {
     this.apiService.getCards().subscribe(
       resp => {
         // this.cards = resp.body.cards
-        // this.headers =
-        console.log(resp.headers)
+        this.headers = resp.headers.keys().map(
+          key => (`${key}: ${resp.headers.get(key)}`)
+        )
+        console.log(this.headers)
       },
       error => console.log(error)
     )
