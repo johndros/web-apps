@@ -15,7 +15,6 @@ export class CardListComponent implements OnInit {
 
   ngOnInit() {
    this.getCards();
-
   }
 
   getCards() {
