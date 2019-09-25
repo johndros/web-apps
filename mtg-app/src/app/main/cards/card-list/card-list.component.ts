@@ -9,8 +9,7 @@ import { iCard } from '../../../global/models/icard';
 })
 export class CardListComponent implements OnInit {
   cards = [];
-  headers = [];
-
+  
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
@@ -20,11 +19,7 @@ export class CardListComponent implements OnInit {
   getCards() {
     this.apiService.getCards().subscribe(
       resp => {
-        // this.cards = resp.body.cards
-        this.headers = resp.headers.keys().map(
-          key => (`${key}: ${resp.headers.get(key)}`)
-        )
-        console.log(this.headers)
+        this.cards = resp.body.cards
       },
       error => console.log(error)
     )

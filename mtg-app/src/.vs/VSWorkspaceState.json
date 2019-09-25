@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\global",
+    "\\app\\global\\services",
+    "\\app\\main",
+    "\\app\\main\\cards",
+    "\\app\\main\\cards\\card-list"
+  ],
+  "SelectedNode": "\\app\\main\\cards\\card-list\\card-list.component.scss",
+  "PreviewInSolutionExplorer": false
+}

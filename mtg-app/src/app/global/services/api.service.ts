@@ -8,7 +8,7 @@ import { iCard } from '../models/icard';
   providedIn: 'root'
 })
 export class ApiService {
-  cardsUrl = 'https://api.magicthegathering.io/v1/cards';
+  cardsUrl = 'https://api.magicthegathering.io/v1/cards?page=1';
 
   constructor(private http: HttpClient) { }
 

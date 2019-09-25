@@ -1,5 +1,6 @@
 export interface iCard {
   cards: Card[];
+  headers: Headers[];
 }
 
 export interface Card {
@@ -65,8 +66,8 @@ export interface PaginationFilter {
   pageSize?: number;
 }
 
-export interface headers {
-  ratelimit: number;
+export interface Headers {
+  rateLimit: number;
   ratelimitRemain: number;
   totalCount: number;
 }
