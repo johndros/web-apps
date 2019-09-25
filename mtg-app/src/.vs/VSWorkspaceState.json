@@ -3,11 +3,14 @@
     "",
     "\\app",
     "\\app\\global",
+    "\\app\\global\\models",
     "\\app\\global\\services",
     "\\app\\main",
-    "\\app\\main\\cards",
-    "\\app\\main\\cards\\card-list"
+    "\\app\\main\\cards\\card-list",
+    "\\app\\main\\layouts",
+    "\\app\\main\\layouts\\nav",
+    "\\assets"
   ],
-  "SelectedNode": "\\app\\main\\cards\\card-list\\card-list.component.scss",
+  "SelectedNode": "\\assets",
   "PreviewInSolutionExplorer": false
 }
