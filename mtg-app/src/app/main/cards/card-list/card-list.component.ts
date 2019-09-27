@@ -19,7 +19,7 @@ export class CardListComponent implements OnInit {
   getCards() {
     this.apiService.getCards().subscribe(
       resp => {
-        this.cards = resp.body.cards
+        // this.cards = resp.body.cards
       },
       error => console.log(error)
     )
