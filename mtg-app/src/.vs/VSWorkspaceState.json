@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\global",
-    "\\app\\global\\models",
-    "\\app\\global\\services",
     "\\app\\main",
+    "\\app\\main\\cards",
     "\\app\\main\\cards\\card-list",
+    "\\app\\main\\cards\\pagination",
     "\\app\\main\\layouts",
+    "\\app\\main\\layouts\\content",
     "\\app\\main\\layouts\\nav",
     "\\assets"
   ],
-  "SelectedNode": "\\assets",
+  "SelectedNode": "\\app\\main\\cards\\pagination\\pagination.component.scss",
   "PreviewInSolutionExplorer": false
 }
