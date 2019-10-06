@@ -8,12 +8,12 @@ import { iCard } from '../models/icard';
   providedIn: 'root'
 })
 export class ApiService {
-  cardsUrl = 'https://api.magicthegathering.io/v1/cards?page=1';
+  cardsUrl = 'https://api.magicthegathering.io/v1/cards';
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-  getCards = (): Observable<any> => {
-    return this.http.get<any>(this.cardsUrl, { observe: 'response' })
+    getCards = (): Observable<any> => {
+    return this.http.get<any>(this.cardsUrl)
       .pipe(catchError(this.handleError)
       );
   }

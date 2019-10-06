@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../global/services/api.service';
-import { iCard } from '../../../global/models/icard';
 
 @Component({
   selector: 'app-card-list',

@@ -14,11 +14,11 @@ export class NavComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.getHeader()
+   // this.getHeader()
   }
 
-  getHeader = () => {
-    this.apiService.getCards().subscribe(
+  /*getHeader = () => {
+    this.apiService.getHeaders().subscribe(
       resp => {
         this.totalCardHeader = resp.headers.get('Total-Count')
         this.rateLimitHeader = resp.headers.get('Ratelimit-Limit')
@@ -26,5 +26,5 @@ export class NavComponent implements OnInit {
       },
       error => console.log(error)
     )
-  }
+  }*/
 }
