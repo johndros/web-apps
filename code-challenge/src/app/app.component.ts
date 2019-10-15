@@ -15,7 +15,7 @@ export class AppComponent {
     results = [];
     searchEntries: Observable<boolean>;
 
-    showDropDown: boolean;
+    showDropDown = false;
 
     constructor(private srv: ApiService) { }
 
@@ -27,15 +27,10 @@ export class AppComponent {
         this.searchField.valueChanges
             .subscribe(searchField => this.srv.search(searchField)
                 .subscribe(resp => this.results = resp.entries)
-        );
-        this.searchEntries = this.searchField.valueChanges.pipe(
-            map(val => val.length = 0 ? this.showDropDown = false : true)
-        );
-        console.log(this.searchField)
-        
+            );
     }
 
-    //toggleDropDown() {
-    //    this.showDropDown = !this.showDropDown;
-    //}
+    toggleDropDown() {
+        this.showDropDown = !this.showDropDown;
+    }
 }

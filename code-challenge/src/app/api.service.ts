@@ -13,6 +13,8 @@ export class ApiService {
 
     search(k) {
         let url = this.baseUrl + `keywords=${k}` + '&language=el';
-        return this.http.get<iResults>(url);
+        return this.http.get<iResults>(url).pipe(
+            debounceTime(200)
+        );
     }
 }
