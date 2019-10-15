@@ -1,0 +1,29 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-2 banner">
+            Banner space
+        </div>
+        <div class="col-lg-2 image">
+            <img src="./assets/xrysiefkairia.png" width="100" height="100" />
+        </div>
+        <div class="col-lg-6 searchForm">
+            <h6>What place are you looking for?</h6>
+            <form>
+                <i class="fas fa-search icon-pos"></i>
+                <input id="search" type="text" 
+                       [formControl]="searchField"
+                       autofocus
+                       />
+            </form>
+            <ul class="list-group results" *ngIf="!showDropDown">
+                <li class="list-group-item resultsItems" *ngFor="let result of results">
+                    {{result.name}}
+                </li>
+            </ul>
+            <button id="searchbtn">Click to search</button>
+        </div>
+        <div class="col-lg-2 banner2">
+            Banner space
+        </div>
+    </div>
+</div>

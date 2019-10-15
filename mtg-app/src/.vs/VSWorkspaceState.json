@@ -2,15 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\global",
+    "\\app\\global\\models",
     "\\app\\main",
     "\\app\\main\\cards",
-    "\\app\\main\\cards\\card-list",
-    "\\app\\main\\cards\\pagination",
     "\\app\\main\\layouts",
-    "\\app\\main\\layouts\\content",
     "\\app\\main\\layouts\\nav",
     "\\assets"
   ],
-  "SelectedNode": "\\tsconfig.app.json",
+  "SelectedNode": "\\app\\main\\layouts\\nav\\nav.component.ts",
   "PreviewInSolutionExplorer": false
 }
