@@ -12,7 +12,7 @@ export class ApiService {
     constructor(private http: HttpClient) { }
 
     search(k) {
-        let url = this.baseUrl + `keywords=${k}` + '&language=el';
+        let url = this.baseUrl + `keywords=${k}` + `&language=${navigator.languages[1]}`;
         return this.http.get<iResults>(url).pipe(
             debounceTime(200)
         );

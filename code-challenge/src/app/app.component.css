@@ -38,7 +38,12 @@
     width: 90%;
 }
 .resultsItems {
-    padding: .155rem 1.25rem
+    padding: .155rem 1.25rem;
+    cursor:pointer
+}
+.resultsItems:hover{
+    background-color: steelblue;
+    color:white
 }
 
 

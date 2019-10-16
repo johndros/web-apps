@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 export class AppComponent {
     searchField: FormControl = new FormControl();
 
+    resultName = '';
     results = [];
     searchEntries: Observable<boolean>;
 
@@ -28,6 +29,11 @@ export class AppComponent {
             .subscribe(searchField => this.srv.search(searchField)
                 .subscribe(resp => this.results = resp.entries)
             );
+    }
+
+    selectValue(value) {
+        this.searchField.patchValue(this.selectValue(value));
+        //this.showDropDown = false;
     }
 
     toggleDropDown() {
