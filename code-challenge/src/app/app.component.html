@@ -33,6 +33,7 @@
             <button class="btn btn-primary mr-3"
                     id="searchbtn"
                     type="button"
+                    (click)="search()"
                     [disabled]="!this.searchField.value.search">
                 Click to search
             </button>
