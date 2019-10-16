@@ -52,12 +52,16 @@
     .banner2{
         display: none;
     }
+    .banner{
+        height:350px
+    }
 }
 
 @media (max-width: 992px) {
     .banner2 {
         display: block;
         margin-top: 20px;
+        height:150px
     }
     .banner{
         display:none
@@ -67,5 +71,11 @@
     }
     .icon-pos {
         left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image {
+        padding-bottom: 15px;
     }
 }

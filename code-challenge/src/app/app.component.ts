@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { ApiService } from './api.service';
-import { map, startWith } from 'rxjs/operators'
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,33 +10,62 @@ import { Observable } from 'rxjs';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    searchField: FormControl = new FormControl();
+    @ViewChild('list') userInput: ElementRef;
+    searchField: FormGroup;
 
-    resultName = '';
     results = [];
     searchEntries: Observable<boolean>;
 
     showDropDown = false;
 
-    constructor(private srv: ApiService) { }
+    constructor(private srv: ApiService, private fb: FormBuilder) {
+        this.form();
+    }
 
     ngOnInit() {
-        this.searchData()
+        this.searchData();
     }
+
+    form() {
+        this.searchField = this.fb.group({
+            search: []
+        })
+    }
+
+
 
     searchData() {
-        this.searchField.valueChanges
+        this.searchField.get('search').valueChanges
+            .pipe(debounceTime(30), distinctUntilChanged())
             .subscribe(searchField => this.srv.search(searchField)
                 .subscribe(resp => this.results = resp.entries)
-            );
+        );
     }
-
     selectValue(value) {
-        this.searchField.patchValue(this.selectValue(value));
-        //this.showDropDown = false;
+        this.searchField.patchValue({ 'search': value });
+        this.showDropDown = false;
+    }
+    search() {
+        const url = 'https://www.google.com/search?'
+        window.open(url + `q=${this.searchField.value.search}`)
     }
 
-    toggleDropDown() {
+
+
+    keyPress() {
+        let event = new KeyboardEvent('keypress', { 'bubbles': true });
+        this.userInput.nativeElement.dispatchEvent(event);
+    }
+    onKeyPress() {
+        this.showDropDown = true;
+    }
+
+
+
+    closeDropDown() {
         this.showDropDown = !this.showDropDown;
+    }
+    toggleDropDown() {
+        this.showDropDown = !this.showDropDown
     }
 }

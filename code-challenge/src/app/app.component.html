@@ -8,20 +8,35 @@
         </div>
         <div class="col-lg-6 searchForm">
             <h6>What place are you looking for?</h6>
-            <form>
+            <form novalidate
+                  [formGroup]="searchField">
                 <i class="fas fa-search icon-pos"></i>
-                <input id="search" type="text"
-                       (click)="toggleDropDown()"
-                       [formControl]="searchField"
-                       autofocus
-                       />
+                <input id="search"
+                       type="text"
+                       formControlName="search"
+                       (click) ="toggleDropDown()"
+                       (keyup)="onKeyPress($event)"
+                       autocomplete="off"
+                       #list
+                       autofocus />
             </form>
-            <ul class="list-group results" *ngIf="showDropDown">
-                <li (click)="selectValue(result.name)" class="list-group-item resultsItems" *ngFor="let result of results">
-                    {{result.name}}
-                </li>
-            </ul>
-            <button id="searchbtn">Click to search</button>
+            <div clickOutside (clickOutside)="closeDropDown()">
+                <ul  *ngIf='showDropDown' class="list-group results">
+                    <li (click)="selectValue(result.name)" 
+                        class="list-group-item resultsItems" 
+                        *ngFor="let result of results">
+                        {{result.name}}
+                    </li>
+                </ul>
+            </div>
+            
+            <button class="btn btn-primary mr-3"
+                    id="searchbtn"
+                    type="button"
+                    (click)="search(resultList)"
+                    [disabled]="!this.searchField.value.search">
+                Click to search
+            </button>
         </div>
         <div class="col-lg-2 banner2">
             Banner space
