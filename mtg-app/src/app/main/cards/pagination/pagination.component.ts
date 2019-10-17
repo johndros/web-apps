@@ -7,26 +7,25 @@ import { HeaderService } from '../../../global/services/header.service';
   styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
-    Header = '';
+    header: string;
 
     constructor(private headerService: HeaderService) { }
 
     ngOnInit() {
         this.getHeader();
-        //this.linkHeader();
+        this.linkHeader();
     }
 
     getHeader = () => {
         this.headerService.getHeaders().subscribe(
             resp => {
-                resp.headers.keys();
-                console.log(resp)
-
+                this.header = resp.headers.get('Link')
+                console.log(this.header)
             })
     }
 
-    /*linkHeader = () => {
-        let parts = this.lInksHeader.split(',').reduce((acc, link) => {
+    linkHeader = () => {
+        let parts = this.header.split(',').reduce((acc, link) => {
             let match = link.match(/<(.*)>; rel="(\w*)"/)
             let url = match[1]
             let rel = match[2]
@@ -34,6 +33,6 @@ export class PaginationComponent implements OnInit {
             return acc;
         }, {})
         console.log(parts)
-    }*/
+    }
     
 }
