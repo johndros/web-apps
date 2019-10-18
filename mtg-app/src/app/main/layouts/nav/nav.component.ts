@@ -7,9 +7,9 @@ import { ApiService } from '../../../global/services/api.service';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  totalCardHeader = '';
+  /*totalCardHeader = '';
   rateLimitHeader = '';
-  rateRemainHeader = '';
+  rateRemainHeader = '';*/
 
   constructor(private apiService: ApiService) { }
 
